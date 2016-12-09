@@ -16,10 +16,8 @@ import {
 export default class Szabiapp extends Component {
   render() {
     return (
-      <View style={[styles.FirstButton]}>
-      <Text>
+      <View style={styles.FirstButton}>
         {this.FirstButton()}
-        </Text>
       <View>
         {this.SecondButton()}
         {this.ThirdButton()}
@@ -31,14 +29,11 @@ export default class Szabiapp extends Component {
       );
   };
 
-  FirstButton = function(){
-    return 
-      <View style={[styles.FirstButton]}>
+  FirstButton = function() {
+    return
         <Text>
         143423423wgergerbetb4232fsbdetger
         </Text>
-      </View>
-    
   };
 
   SecondButton = function(){
@@ -73,17 +68,11 @@ export default class Szabiapp extends Component {
   var styles = StyleSheet.create({
     Circle: {
       borderColor: '#CC0000',
-      height: 100,
-      width: 100,
       justifyContent: 'center',
       alignItems: 'center',
     },
     FirstButton: {
-      borderColor: '#CC0000',
-      height: 100,
-      width: 100,
-      justifyContent: 'center',
-      alignItems: 'center',
+    
 
     },
     SecondButton: {
