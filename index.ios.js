@@ -9,72 +9,71 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View,
-  TouchableHighlight
+  View
 } from 'react-native';
 
-export default class Szabiapp extends Component {
-  render() {
-    return (
-      <View style={styles.FirstButton}>
+var Szabiapp = React.createClass({
+  render: function () {
+    return  <View style={[styles.buttonWrapper]}>
         {this.FirstButton()}
-      <View>
-        {this.SecondButton()}
-        {this.ThirdButton()}
-        {this.FourthButton()}
-        {this.FifthButton()}
-        {this.SixthButton()}
-      </View>
-      </View>
-      );
-  };
+       </View>
+    },
 
-  FirstButton = function() {
+  FirstButton: function () {
     return
+      <View style={[styles.buttonWrapper]}>
         <Text>
         143423423wgergerbetb4232fsbdetger
         </Text>
-  };
+      </View>
+  },
 
-  SecondButton = function(){
+  SecondButton: function(){
     return
-  };
 
-  ThirdButton = function(){
+  },
+
+  ThirdButton: function(){
     return
-  };
+  },
 
-  FourthButton = function(){
+  FourthButton: function(){
     return
-  };
+  },
 
 
-  FifthButton = function(){
+  FifthButton: function(){
     return
-  };
+  },
 
-  SixthButton = function(){
+  SixthButton: function(){
     return
-  };
+  },
 
-  Circle = function(){
-    return <TouchableHighlight
-   style={styles.circle}
-   >
-   </TouchableHighlight>
-  };
-};
+  Circle: function(){
+    return 
+  }
+});
+
 
   var styles = StyleSheet.create({
+
     Circle: {
-      borderColor: '#CC0000',
+      borderColor: '#00CC00',
       justifyContent: 'center',
       alignItems: 'center',
     },
     FirstButton: {
     
-
     },
+
+    buttonWrapper: {
+    flex: 3,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+    },
+
     SecondButton: {
 
     },
