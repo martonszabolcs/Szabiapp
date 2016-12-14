@@ -8,47 +8,73 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Alert,
   Text,
   Button,
   View
 } from 'react-native';
 
-const onButtonPress = () => {
-  Alert.alert('Király');
-};
+
+
+
 
 
 var Szabiapp = React.createClass({
+getInitialState: function() {
+    return {
+      justifyContent: 'center',
+      alignItems: 'center'
+    }
+  },
+
+
+
+
+// <View style=
+// ((Stilus megadás)){[styles.header,
+// ((State hivatkozás)) {justifyContent:this.state.justifyContent}]} 
+//((név adás => id="circleContainer">
+//      <View style={styles.button} id="circle">
   render: function () {
-  return <View style={styles.container}>
+    return <View style={styles.container} id="container">
+    <View style={[styles.header, {justifyContent:this.state.justifyContent, alignItems:this.state.alignItems, }]} id="circleContainer">
+      <View style={styles.button} id="circle">
+      </View>
+    </View>
 
-  <View style={styles.header}>
+  <View style={styles.footer}>
+  
+  <Button
+  onPress={this.onButtonPress}
+  title="Up->"
+  color="white"
+  accessibilityLabel="Learn more about this purple button"/>
 
+  <Button
+  onPress={this.onButtonPress}
+  title="Up"
+  color="white"
+  accessibilityLabel="Learn more about this purple button"/>
 
-  <View style={[styles.footer]}>
-          {this.firstButton()}
-
-  <View style={[styles.button]}>
-          {this.circle()}
+  <Button
+  onPress={this.onButtonPress}
+  title="<-Up"
+  color="white"
+  accessibilityLabel="Learn more about this purple button"/>
 
        </View>
        </View>
-       </View>
-       </View>
+      //GOMBOK FÜGGVÉNYEK
+
 },
+  onButtonPress: function () {
+ this.setState({justifyContent: 'flex-start'})
 
-  firstButton: function () {
-    return (
-      <Button
-  onPress={onButtonPress}
-  title="1"
-  color="#DD0000"
-  accessibilityLabel="Learn more about this purple button"
-/>
+},
+onSecondButtonPress: function () {
+ this.setState({justifyContent: 'flex-start'})
 
-      )
-      
+},
+  firstButton: function () {  
   },
 
   SecondButton: function(){
@@ -56,7 +82,7 @@ var Szabiapp = React.createClass({
       <Button
   onPress={onButtonPress}
   title="2"
-  color="#DD0000"
+  color="#white"
   accessibilityLabel="Learn more about this purple button"
 />
 
@@ -80,24 +106,23 @@ var Szabiapp = React.createClass({
     return
   },
 
-  circle: function(){
-    return 
-    <View style={styles.button}>
-    </View>
-  }
+  
 });
 
 
   var styles = StyleSheet.create({
 
     circle: {
-      borderColor: '#00CC00',
+      borderColor: '#0000',
       justifyContent: 'center',
       alignItems: 'center',
     },
 
      header: {
       flex: 1,
+      backgroundColor: '#dd9876',
+      marginTop: 50
+      
       },
     footer: {
       flex:1,
@@ -106,25 +131,31 @@ var Szabiapp = React.createClass({
       borderRadius: 50,
       flexDirection: 'row',
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
+      backgroundColor: '#9999'
+
       },
+
+    middle: {
+      flex: 2,
+    },
 
     lapText: {
     fontSize: 30
     },
     
     FirstButton: {
-    
+    borderRadius: 10,
+    justifyContent: 'center',
+      alignItems: 'center'
     },
 
     button: {
-      borderWidth: 2,
-      height: 100,
-      width: 100,
+      borderWidth: 20,
+      height: 10,
+      width: 10,
       borderRadius: 50,
-      justifyContent: 'space-around',
-      alignItems: 'center',
-      borderColor: '#CC0000'
+      borderColor: 'black'
     },
 
     buttonWrapper: {
@@ -135,7 +166,9 @@ var Szabiapp = React.createClass({
     },
     container: {
     flex: 1,
-    alignItems: 'stretch'
+    alignItems: 'stretch',
+    backgroundColor: '#dd9876'
+
     },
 
     SecondButton: {
