@@ -25,10 +25,6 @@ getInitialState: function() {
       alignItems: 'center'
     }
   },
-
-
-
-
 // <View style=
 // ((Stilus megadás)){[styles.header,
 // ((State hivatkozás)) {justifyContent:this.state.justifyContent}]} 
@@ -36,112 +32,118 @@ getInitialState: function() {
 //      <View style={styles.button} id="circle">
   render: function () {
     return <View style={styles.container} id="container">
-    <View style={[styles.header, {justifyContent:this.state.justifyContent, alignItems:this.state.alignItems, }]} id="circleContainer">
-      <View style={styles.button} id="circle">
-      </View>
-    </View>
+               <View style={[styles.header, {justifyContent:this.state.justifyContent, alignItems:this.state.alignItems}]} id="circleContainer">
+                  <View style={styles.button} id="circle">
+                  </View>
+              </View>
 
-  <View style={styles.footer}>
+                     <View style={styles.bigFooter}>
+                         <View style={styles.footer}>
   
-  <Button
-  onPress={this.onButtonPress}
-  title="Up->"
-  color="white"
-  accessibilityLabel="Learn more about this purple button"/>
+                               <Button
+                               onPress={this.onUpLeftButtonPress}
+                               title="O"
+                               color="white"
+                               accessibilityLabel="Learn more about this purple button"/>
 
-  <Button
-  onPress={this.onButtonPress}
-  title="Up"
-  color="white"
-  accessibilityLabel="Learn more about this purple button"/>
+                               <Button
+                               onPress={this.onUpButtonPress}
+                               title="O"
+                               color="white"
+                               accessibilityLabel="Learn more about this purple button"/>
 
-  <Button
-  onPress={this.onButtonPress}
-  title="<-Up"
-  color="white"
-  accessibilityLabel="Learn more about this purple button"/>
+                               <Button
+                               onPress={this.onUpRightButtonPress}
+                               title="O"
+                               color="white"
+                               accessibilityLabel="Learn more about this purple button"/>
+                         </View>
 
-       </View>
-       </View>
-      //GOMBOK FÜGGVÉNYEK
+                                   <View style={styles.downFooter}>
+
+                                            <Button
+                                            onPress={this.onDownLeftButtonPress}
+                                            title="O"
+                                            color="white"
+                                            accessibilityLabel="Learn more about this purple button"/>
+
+                                            <Button
+                                            onPress={this.onDownButtonPress}
+                                            title="O"
+                                            color="white"
+                                            accessibilityLabel="Learn more about this purple button"/>
+
+                                            <Button
+                                            onPress={this.onDownRightButtonPress}
+                                            title="O"
+                                            color="white"
+                                            accessibilityLabel="Learn more about this purple button"/>
+
+                                  </View>
+                    </View>
+            </View>
+
+
+
+},  
+  onUpButtonPress: function () {
+ this.setState({justifyContent: 'flex-start'})
+ this.setState({alignItems: 'center'})
 
 },
-  onButtonPress: function () {
+  onUpLeftButtonPress: function () {
+ this.setState({alignItems: 'flex-start'})
  this.setState({justifyContent: 'flex-start'})
 
-},
-onSecondButtonPress: function () {
+}, 
+ onUpRightButtonPress: function () {
  this.setState({justifyContent: 'flex-start'})
+ this.setState({alignItems: 'flex-end'})
+
 
 },
-  firstButton: function () {  
-  },
+  onDownButtonPress: function () {
+ this.setState({justifyContent: 'flex-end'})
+ this.setState({alignItems: 'center'})
 
-  SecondButton: function(){
-    return (
-      <Button
-  onPress={onButtonPress}
-  title="2"
-  color="#white"
-  accessibilityLabel="Learn more about this purple button"
-/>
+}, 
+ onDownLeftButtonPress: function () {
+ this.setState({justifyContent: 'flex-end'})
+ this.setState({alignItems: 'flex-start'})
 
-      )
-  },
-
-  ThirdButton: function(){
-    return
-  },
-
-  FourthButton: function(){
-    return
-  },
-
-
-  FifthButton: function(){
-    return
-  },
-
-  SixthButton: function(){
-    return
-  },
-
-  
+}, 
+ onDownRightButtonPress: function () {
+ this.setState({justifyContent: 'flex-end'})
+ this.setState({alignItems: 'flex-end'})
+}
 });
 
 
   var styles = StyleSheet.create({
 
-    circle: {
-      borderColor: '#0000',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-
      header: {
-      flex: 1,
-      backgroundColor: '#dd9876',
-      marginTop: 50
-      
+      flex: 3,
+      backgroundColor: '#dd7556',
+      marginTop: 25,
+      padding: 5
       },
+
     footer: {
-      flex:1,
-      borderWidth: 2,
-      height: 100,
-      borderRadius: 50,
       flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#9999'
-
       },
 
-    middle: {
-      flex: 2,
-    },
+    downFooter: {
+      flexDirection: 'row',
+      },
 
-    lapText: {
-    fontSize: 30
+    bigFooter: {
+      flex: 1,
+      borderWidth: 2,
+      borderRadius: 30,
+      backgroundColor: '#9999',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+      marginBottom: 5,
     },
     
     FirstButton: {
@@ -151,41 +153,18 @@ onSecondButtonPress: function () {
     },
 
     button: {
-      borderWidth: 20,
-      height: 10,
-      width: 10,
-      borderRadius: 50,
+      borderWidth: 50,
+      height: 100,
+      width: 100,
+      borderRadius: 500,
       borderColor: 'black'
     },
 
-    buttonWrapper: {
-      flex: 3,
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      alignItems: 'center'
-    },
     container: {
     flex: 1,
     alignItems: 'stretch',
     backgroundColor: '#dd9876'
-
     },
-
-    SecondButton: {
-
-    },
-    ThirdButton: {
-
-    },
-    FourthButton: {
-
-    },
-    FifthButton: {
-
-    },
-    SixthButton: {
-
-    }
   });
 
 AppRegistry.registerComponent('Szabiapp', () => Szabiapp);
